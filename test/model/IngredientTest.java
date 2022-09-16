@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.NegativeNumberException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,7 +22,7 @@ class IngredientTest {
         setupStage1();
         try {
             ingri.addWeight(-100);
-        }catch (NegativeArraySizeException ex){
+        }catch (NegativeNumberException ex){
             ex.printStackTrace();
         }
         assertEquals(245,ingri.getWeight());
@@ -37,7 +38,7 @@ class IngredientTest {
         setupStage1();
         try {
             ingri.removeWight(-100);
-        }catch (NegativeArraySizeException ex){
+        }catch (NegativeNumberException ex){
             ex.printStackTrace();
         }
         assertEquals(245,ingri.getWeight());

@@ -6,7 +6,7 @@ public class Ingredient {
 	private String name;
 	private double weight;
 	
-	public Ingredient(String n, double w) throws NegativeArraySizeException {
+	public Ingredient(String n, double w) throws NegativeNumberException {
 		if(w>0) {
 			name = n;
 			weight = w;
@@ -23,18 +23,18 @@ public class Ingredient {
 		return weight;
 	}
 	
-	public void addWeight(double additionalW) throws NegativeArraySizeException {
+	public void addWeight(double additionalW) throws NegativeNumberException  {
 		if(additionalW>0) {
 			weight = weight + additionalW;
 		}else {
-			throw new NegativeArraySizeException();
+			throw new NegativeNumberException();
 		}
 	}
 	public void removeWight(int toRemove) throws NegativeNumberException {
 		if(weight - toRemove>=0 && toRemove>0) {
 			weight = weight - toRemove;
 		}else {
-			throw new NegativeArraySizeException();
+			throw new NegativeNumberException();
 		}
 	}
 	
